@@ -1,0 +1,63 @@
+<div class="container">
+  <p>
+    <div class="tengah">
+      <h2>Data Mahasiswa</h2>
+      <p>
+        Oleh : Asep Koharudn | 06511339
+      </p>
+    </div>
+  </p>
+  <p>
+    <div class="row">
+      <div class="col l4 offset-l4 s12">
+          <div class="input-field">
+            <input id="search" type="search" ng-model="cari">
+            <label for="search"><i class="mdi-action-search"></i></label>
+          </div>
+      </div>
+    </div>
+  </p>
+
+  <table class="highlight centered" border="1">
+    <thead>
+      <tr>
+        <th>
+          NO
+        </th>
+        <th>
+          NAMA
+        </th>
+        <th>
+          ALAMAT
+        </th>
+        <th colspan="2">
+          AKSI
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="data in mahasiswa | filter : cari">
+        <td>
+          {{$index+1}}
+        </td>
+        <td>
+          {{data.nama}}
+        </td>
+        <td>
+          {{data.alamat}}
+        </td>
+        <td>
+          <button class="btn waves-effect waves-light" type="button" ng-click="delete_data(data.id)">DELETE</button>
+        </td>
+        <td>
+          <a class="waves-effect waves-light btn edit_data" href="#edit_data" ng-click="edit_data(data.id)">Edit Data</a>
+          <script type="text/javascript">
+            $(document).ready(function(){
+              $('.edit_data').leanModal();
+            });
+          </script>
+        </td>
+        </tr>
+    </tbody>
+  </table>
+</div>

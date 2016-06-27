@@ -1,0 +1,29 @@
+
+      <div id="edit_data" class="modal">
+        <div class="modal-content">
+          <h4 class="tengah">Edit Data Mahasiswa</h4>
+          <hr>
+          <!-- inputan -->
+            <form action="update_data.php" method="post">
+              <div class="row" ng-repeat="data in edit_mhs">
+                <input class="nyumput" type="text" name="p_id" value="{{data.id}}">
+                <div class="input-field col l12">
+                  <input placeholder="{{data.id}}" value="{{data.id}}" name="id" id="id" type="number" >
+                  <label class="active" for="nama">ID</label>
+                </div>
+                <div class="input-field col l6">
+                  <input placeholder="{{data.nama}}" value="{{data.nama}}" name="nama" id="nama" type="text">
+                  <label class="active" for="nama">NAMA</label>
+                </div>
+                <div class="input-field col l6">
+                  <input placeholder="{{data.alamat}}" value="{{data.alamat}}" name="alamat" id="alamat" type="text">
+                  <label class="active" for="alamat">ALAMAT</label>
+                </div>
+              </div>
+              <button class="waves-effect waves-green btn" type="submit" name="button">Edit Data</button>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <a class="modal-close waves-effect waves-green btn-flat" href="#!">Batal</a>
+        </div>
+      </div>
